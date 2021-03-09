@@ -84,8 +84,7 @@ function App() {
             </Switch>
           </div>
       </Drawer>
-      <main >
-        <div className="content" >
+      <main className="content">
           <Container maxWidth="lg" >
             <Switch>
               <Route exact path="/" component={home} />
@@ -93,7 +92,6 @@ function App() {
               <Route exact path="/profile" component={profile} />
             </Switch>
           </Container >
-        </div>
       </main>
       </Router>
     </div>
