@@ -1,11 +1,6 @@
-FROM node:15.11.0-buster-slim
-
-WORKDIR /usr/
-
-COPY package*.json ./
-
+FROM node:alpine
+WORKDIR /app
+COPY package.json /app
 RUN yarn install
-
-EXPOSE 3000
-
-CMD [ "yarn", "start" ]
+COPY . /app
+CMD ["yarn", "run", "start"]
