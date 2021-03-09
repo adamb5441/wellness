@@ -15,3 +15,8 @@ code {
 .content{
   margin-top: 80px;
 }
+
+a {
+  color: black;
+  text-decoration: none;
+}
