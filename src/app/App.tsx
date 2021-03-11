@@ -6,6 +6,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import recipes from "../recipes/index"
 import home from "../home/index"
 import profile from "../profile/index"
+import LoginButton from './components/LoginButton'
 import './styles.css';
 
 const drawerWidth = 240;
@@ -43,6 +44,7 @@ function App() {
             <Typography variant="h6" color="inherit">
               Wellness.com
             </Typography>
+            <LoginButton />
           </Toolbar>
         </AppBar>
       <Drawer
