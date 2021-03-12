@@ -22,12 +22,12 @@ const LoginButton = () => {
 
   return (
     !isAuthenticated ?
-
-    <Button color="inherit" onClick={() => loginWithRedirect()}>Login</Button>
-
+    <div className="authGroup">
+      <Button color="inherit" onClick={() => loginWithRedirect()}>Login</Button>
+    </div>
     :
 
-    <div>
+    <div className="authGroup">
     <IconButton
       aria-label="account of current user"
       aria-controls="menu-appbar"

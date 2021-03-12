@@ -6,7 +6,8 @@ export interface Recipe {
   }
   
   interface Ingredient {
+    id: string;
     name: string;
-    quantity: number;
-    measurement: string;
+    description: string;
+    rating: number;
   }

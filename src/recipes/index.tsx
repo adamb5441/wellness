@@ -7,11 +7,15 @@ import Divider from '@material-ui/core/Divider';
 
 
 function Recipes() {
-
+  
+  const searchRecipes = function(queryString: string){
+    console.log(queryString);
+  }
   return (
     <Card >
-      <RecipesSearch />
+      <RecipesSearch search={searchRecipes} />
       <Divider component="li" />
+
       <RecipesList />
 
     </Card >

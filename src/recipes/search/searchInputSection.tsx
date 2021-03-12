@@ -32,9 +32,13 @@ const useStyles = makeStyles((theme) => ({
     }
   }));
 
-function RecipesList() {
-  const classes = useStyles();
+interface Props  {
+  search: Function;
+ }
 
+function SearchInputSection( props: Props ) {
+  const classes = useStyles();
+  const [fieldValue, setFieldValue] = React.useState("")
   return (
       <div className={classes.container}>
         <Paper component="form" className={classes.root}>
@@ -42,8 +46,9 @@ function RecipesList() {
             className={classes.input}
             placeholder="Search recipes"
             inputProps={{ 'aria-label': 'Search recipes' }}
+            onChange={ (e) => setFieldValue((e.target as HTMLInputElement).value) }
             />
-            <IconButton className={classes.iconButton} aria-label="search">
+            <IconButton onClick={() =>props.search(fieldValue)} className={classes.iconButton} aria-label="search">
             <SearchIcon />
             </IconButton>
         </Paper>
@@ -51,4 +56,4 @@ function RecipesList() {
   );
 }
   
-export default RecipesList;
+export default SearchInputSection;
