@@ -5,6 +5,7 @@ import ListItem from "@material-ui/core/ListItem";
 import Divider from "@material-ui/core/Divider";
 import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
+import { SearchResult } from "../models/searchResult"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,19 +21,22 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: "5%"
   }
 }));
+interface Props  {
+  results: SearchResult[];
+ }
 
-function RecipesList() {
+function RecipesList(props: Props) {
   const classes = useStyles();
   const [checked, setChecked] = React.useState();
 
   return (
     <div>
     <List className={classes.root}>
-    {[0, 1, 2, 3].map( (value) =>
+    {props.results.map( (result) =>
         <div>
           <ListItem alignItems="flex-start">
             <ListItemText
-              primary="Grilled Chicken"
+              primary={result.name}
               secondary={<React.Fragment>
                 <Typography
                   component="span"
@@ -40,7 +44,7 @@ function RecipesList() {
                   className={classes.inline}
                   color="textPrimary"
                 >
-                  Really Good Chicken
+                  { result.description }
                 </Typography>
               </React.Fragment>} />
             <div>

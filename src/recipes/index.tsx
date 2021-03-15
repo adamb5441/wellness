@@ -10,6 +10,7 @@ import axios from 'axios';
 function Recipes() {
   
   const { getAccessTokenSilently } = useAuth0();
+  const [ recipes, setRecipes ] = React.useState([])
   const searchRecipes = async function(queryString: string){
     console.log(queryString);
     // const token = await getAccessTokenSilently({
@@ -19,7 +20,7 @@ function Recipes() {
       axios.get(
         `/api/Search/OpenSearch?page=1&pageSize=5`
       ).then(res => {
-        console.log(res)
+        setRecipes(res.data)
       }).catch( err =>{
         console.log(err)
       })
@@ -30,7 +31,7 @@ function Recipes() {
       <RecipesSearch search={searchRecipes} />
       <Divider component="li" />
 
-      <RecipesList />
+      <RecipesList results={recipes}  />
 
     </Card >
   );
