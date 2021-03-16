@@ -31,32 +31,30 @@ function RecipesList(props: Props) {
 
   return (
     <div>
-    <List className={classes.root}>
-    {props.results.map( (result) =>
-        <div>
-          <ListItem alignItems="flex-start">
-            <ListItemText
-              primary={result.name}
-              secondary={<React.Fragment>
-                <Typography
-                  component="span"
-                  variant="body2"
-                  className={classes.inline}
-                  color="textPrimary"
-                >
-                  { result.description }
-                </Typography>
-              </React.Fragment>} />
-            <div>
-              <img className={classes.image} src="https://via.placeholder.com/150C/O https://placeholder.com/" />
-            </div>
-          </ListItem>
-          <Divider component="li" />
-        </div>
-      )}
-  </List>
-    
-
+        <List className={classes.root}>
+          {props.results.map( (result) =>
+              <div>
+                <ListItem alignItems="flex-start">
+                  <ListItemText
+                    primary={result.name}
+                    secondary={<React.Fragment>
+                      <Typography
+                        component="span"
+                        variant="body2"
+                        className={classes.inline}
+                        color="textPrimary"
+                      >
+                        { result.description }
+                      </Typography>
+                    </React.Fragment>} />
+                  <div>
+                    <img className={classes.image} src="https://via.placeholder.com/150C/O https://placeholder.com/" />
+                  </div>
+                </ListItem>
+                <Divider component="li" />
+              </div>
+            )}
+      </List>
     </div>
   );
 }

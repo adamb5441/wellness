@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+  siteName: {
+    color: "white"
+  }
 }));
 
 function App() {
@@ -41,13 +44,15 @@ function App() {
       <Router>
         <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>
-            <Typography variant="h6" color="inherit">
-              Wellness.com
-            </Typography>
+            <Link to="/">
+              <Typography variant="h6" className={classes.siteName} color="inherit">
+                Wellness.com
+              </Typography>
+            </Link>
             <LoginButton />
           </Toolbar>
         </AppBar>
-      <Drawer
+      {/* <Drawer
         className={classes.drawer}
         variant="permanent"
         classes={{
@@ -85,12 +90,12 @@ function App() {
               </List>
             </Switch>
           </div>
-      </Drawer>
+      </Drawer> */}
       <main className="content">
           <Container maxWidth="lg" >
             <Switch>
-              <Route exact path="/" component={home} />
-              <Route exact path="/recipe" component={recipes} />
+              {/* <Route exact path="/" component={home} /> */}
+              <Route exact path="/" component={recipes} />
               <Route exact path="/profile" component={profile} />
             </Switch>
           </Container >

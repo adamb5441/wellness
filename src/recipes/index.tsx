@@ -4,7 +4,6 @@ import RecipesSearch from "./search/searchInputSection"
 import Card from '@material-ui/core/Card';
 import Divider from '@material-ui/core/Divider';
 import { useAuth0 } from "@auth0/auth0-react";
-
 import axios from 'axios';
 
 function Recipes() {
@@ -37,5 +36,5 @@ function Recipes() {
   );
 }
   
-  export default Recipes;
+export default Recipes;
   

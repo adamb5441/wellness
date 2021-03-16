@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import { useAuth0 } from "@auth0/auth0-react";
 import { Button, Avatar  }from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton';
@@ -52,8 +53,10 @@ const LoginButton = () => {
       open={open}
       onClose={handleClose}
     >
-      <MenuItem onClick={handleClose}>Profile</MenuItem>
-      <MenuItem onClick={handleClose}>My account</MenuItem>
+      <Link to="/profile">
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+      </Link>
+      <MenuItem onClick={handleClose}>My recipes</MenuItem>
       <MenuItem onClick={() => {
         logout({ returnTo: window.location.origin })
         handleClose()
